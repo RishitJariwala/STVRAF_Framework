@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STVRAF Framework API</title>
+    <meta name="description" content="Sovereign Threat Vector Risk Assessment Framework - A Bayesian probabilistic model for assessing cyber-physical risk">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .api-links {
+            display: grid;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .api-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .api-link:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .api-link-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .api-link-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .github-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ STVRAF Framework</h1>
+        <p class="subtitle">Sovereign Threat Vector Risk Assessment Framework</p>
+        
+        <div class="description">
+            <p>
+                A production-grade REST API implementing a Bayesian probabilistic model for assessing 
+                and tracking cyber-physical risk across fleet segments. Built with FastAPI, SQLAlchemy, 
+                and Pydantic for robust, type-safe risk assessment.
+            </p>
+        </div>
+
+        <h2 style="color: #667eea; margin-bottom: 15px;">📡 API Documentation</h2>
+        <div class="api-links">
+            <a href="/docs" class="api-link">
+                <div>
+                    <div class="api-link-title">
+                        Interactive API Documentation <span class="badge">Swagger UI</span>
+                    </div>
+                    <div class="api-link-desc">
+                        Explore and test API endpoints with live interactive documentation
+                    </div>
+                </div>
+            </a>
+            <a href="/redoc" class="api-link">
+                <div>
+                    <div class="api-link-title">
+                        Alternative API Documentation <span class="badge">ReDoc</span>
+                    </div>
+                    <div class="api-link-desc">
+                        Clean, three-panel documentation with search and code samples
+                    </div>
+                </div>
+            </a>
+            <a href="/api/v1/segments/" class="api-link">
+                <div>
+                    <div class="api-link-title">
+                        API Endpoints <span class="badge">/api/v1</span>
+                    </div>
+                    <div class="api-link-desc">
+                        Access the REST API directly (POST, GET endpoints for segments and telemetry)
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <h2 style="color: #667eea; margin-bottom: 15px;">✨ Key Features</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-title">🎯 Bayesian Risk Model</div>
+                <div class="feature-desc">
+                    Calculate posterior probabilities with P(A|E) using observed telemetry evidence
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">📊 Fleet Segmentation</div>
+                <div class="feature-desc">
+                    Track and assess risk across distinct operational fleet segments
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">🔍 Real-time Updates</div>
+                <div class="feature-desc">
+                    Ingest telemetry data and dynamically update risk assessments
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-title">💾 Persistent Storage</div>
+                <div class="feature-desc">
+                    SQLAlchemy ORM with SQLite backend for reliable data persistence
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>
+                Academic Research Project | 
+                <a href="https://github.com/RishitJariwala/STVRAF_Framework" class="github-link" target="_blank" rel="noopener noreferrer">
+                    View on GitHub
+                </a>
+            </p>
+            <p style="margin-top: 10px;">© 2026 Rishit Jariwala. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Vercel Web Analytics -->
+    <script>
+        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
